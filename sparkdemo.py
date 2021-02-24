@@ -26,7 +26,18 @@ hadoopConf.set('fs.s3a.impl', 'org.apache.hadoop.fs.s3a.S3AFileSystem')
 
 spark = SparkSession(sc)
 
-# input_path = "s3a://" + input_bucket_name + file_name
+from datetime import datetime
 
-df = spark.read.parquet('s3a://sparkdemobucketeygds/*.parquet')
-df.write.mode("OVERWRITE").parquet('s3a://mydemooutputbuck/output/')
+now = datetime.now()  # current date and time
+
+year = now.strftime("%Y")
+month = now.strftime("%m")
+day = now.strftime("%d")
+time = now.strftime("%H:%M:%S")
+date_time = now.strftime("%d%m%Y_%H%M%S")
+
+input_path = "s3a://" + input_bucket_name + "/" + "*.parquet"
+output_path = "s3a://" + output_bucket_name + "/" + date_time + "/"
+
+df = spark.read.parquet(input_path)
+df.write.mode("OVERWRITE").parquet(output_path)

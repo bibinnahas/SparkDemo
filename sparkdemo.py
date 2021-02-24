@@ -10,7 +10,7 @@ secret_access_key = "***"
 
 spark = SparkSession.builder.getOrCreate()
 
-# hadoop_conf = spark.sparkContext._jsc
+# hadoop_conf = spark.sparkContext._jscx
 
 # spark._jsc.hadoopConfiguration().set("fs.s3a.access.key", access_key_id)
 # spark._jsc.hadoopConfiguration().set("fs.s3a.secret.key", secret_access_key)

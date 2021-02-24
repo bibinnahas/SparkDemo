@@ -4,8 +4,8 @@ import os
 
 
 def set_variables():
-    os.environ['access_key'] = "AKIA6OOXLL752YGB2675"
-    os.environ['secret_key'] = "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"
+    os.environ['access_key'] = "**"
+    os.environ['secret_key'] = "**"
     os.environ['input_bucket'] = "sparkdemobucketeygds"
     os.environ['output_bucket'] = "mydemooutputbuck"
 

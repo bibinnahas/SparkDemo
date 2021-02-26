@@ -34,7 +34,7 @@ def lambda_handler(event, context):
                     'Args': [
                         'spark-submit',
                         '--deploy-mode', 'client',
-                        's3://sparkdemobucketeygds/runsparkdemo.py',
+                        's3://inputbucket/runsparkdemo.py',
                     ]
                 }
             }

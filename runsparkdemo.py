@@ -5,8 +5,8 @@ import os
 def set_variables():
     os.environ['access_key'] = "***"
     os.environ['secret_key'] = "***"
-    os.environ['input_bucket'] = "sparkdemobucketeygds"
-    os.environ['output_bucket'] = "mydemooutputbuck"
+    os.environ['input_bucket'] = "inputbucket"
+    os.environ['output_bucket'] = "outputbucket"
 
 
 set_variables()

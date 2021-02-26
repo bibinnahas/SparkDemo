@@ -3,10 +3,10 @@ from pyspark import SparkContext, SparkConf
 import os
 
 def set_variables():
-    os.environ['access_key'] = "***"
-    os.environ['secret_key'] = "***"
-    os.environ['input_bucket'] = "inputbucket"
-    os.environ['output_bucket'] = "outputbucket"
+    os.environ['access_key'] = "AKIA6OOXLL75UWZOV4EU"
+    os.environ['secret_key'] = "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"
+    os.environ['input_bucket'] = "inputbucketbibin"
+    os.environ['output_bucket'] = "outputbucketbibin"
 
 
 set_variables()
@@ -25,8 +25,8 @@ input_bucket_name = str(os.environ['input_bucket'])
 output_bucket_name = str(os.environ['output_bucket'])
 
 hadoopConf = sc._jsc.hadoopConfiguration()
-hadoopConf.set('fs.s3a.access.key', access_key_id)
-hadoopConf.set('fs.s3a.secret.key', secret_key_ud)
+# hadoopConf.set('fs.s3a.access.key', access_key_id)
+# hadoopConf.set('fs.s3a.secret.key', secret_key_ud)
 hadoopConf.set('fs.s3a.endpoint', 's3-us-east-2.amazonaws.com')
 hadoopConf.set('fs.s3a.impl', 'org.apache.hadoop.fs.s3a.S3AFileSystem')
 

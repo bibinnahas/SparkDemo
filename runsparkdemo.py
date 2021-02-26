@@ -3,8 +3,8 @@ from pyspark import SparkContext, SparkConf
 import os
 
 def set_variables():
-    os.environ['access_key'] = "AKIA6OOXLL75UWZOV4EU"
-    os.environ['secret_key'] = "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"
+    os.environ['access_key'] = "**"
+    os.environ['secret_key'] = "**"
     os.environ['input_bucket'] = "inputbucketbibin"
     os.environ['output_bucket'] = "outputbucketbibin"
 

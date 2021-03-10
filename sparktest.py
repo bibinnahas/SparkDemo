@@ -11,7 +11,7 @@ sc = SparkContext(conf=conf)
 
 spark = SparkSession(sc)
 
-from pyspark.sql.types import StructType, StructField, StringType, IntegerType
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DataType
 
 new_schema = StructType([
     StructField("action", StringType(), True),
@@ -30,18 +30,22 @@ new_schema = StructType([
 
 dF = spark \
     .read \
-    .json("/home/thesnibibin/Desktop/sample.json", new_schema)
+    .json("sample.json", new_schema)
 
 dF.show()
 print(dF.schema.json())
+print(dF.schema)
 
 schema_json = dF.schema.json()
-
-schemaa = [i for i in dF.schema]
-NewSchema = StructType(schemaa)
-
-print(NewSchema)
 
 a = spark.sparkContext._jvm.org.apache.spark.sql.types.DataType.fromJson(schema_json).toDDL()
 
 print(a)
+
+from pyspark.sql.types import StructType
+
+schema_json = dF.schema.json()
+
+import json
+newSchema = StructType.fromJson(json.loads(schema_json))
+print(newSchema)
